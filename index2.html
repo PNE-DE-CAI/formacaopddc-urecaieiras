@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação · Por dentro do Currículo · Caieiras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+        }
+
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --preto: #212121;
+            --cinza-borda: #e0e4e9;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 0;
+            border-bottom: 4px solid var(--vermelho);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-height: 58px;
+            width: auto;
+            display: block;
+            border-radius: 8px;
+            background: white;
+            padding: 4px;
+        }
+
+        .titulo-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .titulo-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .tab-bar {
+            background-color: white;
+            border-bottom: 2px solid var(--cinza-borda);
+            padding: 0.5rem 2rem 0 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem;
+            position: sticky;
+            top: 86px;
+            z-index: 15;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+            cursor: pointer;
+            border-radius: 30px 30px 0 0;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -2px;
+            white-space: nowrap;
+        }
+
+        .tab-button.active {
+            color: var(--azul-escuro);
+            border-bottom: 3px solid var(--vermelho);
+            background: #f0f4fa;
+        }
+
+        .tab-button:hover {
+            background: #eef3fb;
+            color: var(--azul-escuro);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active-pane {
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 2rem 0 1.2rem 0;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 24px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.08);
+            border: 1px solid var(--cinza-borda);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--azul-escuro);
+        }
+
+        .btn-link {
+            background-color: var(--azul-escuro);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 0.5rem;
+        }
+        .btn-link:hover {
+            background-color: var(--vermelho);
+        }
+
+        .info-box {
+            background: var(--azul-claro);
+            border-radius: 16px;
+            padding: 0.8rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--vermelho);
+        }
+
+        footer {
+            background-color: var(--preto);
+            color: #ccc;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 1rem; }
+            .tab-bar { top: 118px; padding: 0.5rem 1rem 0; }
+            .tab-button { padding: 0.6rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC">
+        </div>
+        <div class="titulo-header">
+            <h1>Formação · Por dentro do Currículo</h1>
+            <p>Diretoria de Ensino Caieiras · 2026</p>
+        </div>
+    </div>
+</header>
+
+<div class="tab-bar">
+    <button class="tab-button active" data-tab="interacao1">📌 Interação 01</button>
+    <button class="tab-button" data-tab="interacao2">📖 Interação 02</button>
+    <button class="tab-button" data-tab="interacao3">π Interação 03</button>
+    <button class="tab-button" data-tab="interacao4">👥 Interação 04</button>
+    <button class="tab-button" data-tab="interacao5">🗺️ Interação 05</button>
+    <button class="tab-button" data-tab="interacao6">🧠 Interação 06</button>
+    <button class="tab-button" data-tab="compartilhar">🤝 Bora compartilhar</button>
+    <button class="tab-button" data-tab="materiais">📚 Materiais</button>
+</div>
+
+<main class="container">
+    <!-- Interação 01 -->
+    <div id="tab-interacao1" class="tab-pane active-pane">
+        <div class="info-box">
+            <i class="fas fa-chalkboard-user"></i> <strong>Por Dentro do Currículo – 1º BIM I</strong><br>
+            Abertura da formação: acolhimento e gamificação. Participe da interação!
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-comments"></i> Interação 01 – Sli.do</h3>
+            <p>Clique no botão abaixo para acessar a sala de perguntas e respostas ao vivo.</p>
+            <a href="https://app.sli.do/event/xx4DfsnBx9XAuBRTwbygya" target="_blank" class="btn-link">Acessar Interação 01 <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-lightbulb"></i> <strong>Contexto pedagógico:</strong> Nesta primeira interação, trabalhamos o diagnóstico inicial e o planejamento estratégico. Assim como na academia, precisamos saber o peso que podemos levantar antes de começar o treino.
+        </div>
+    </div>
+
+    <!-- Interação 02 -->
+    <div id="tab-interacao2" class="tab-pane">
+        <div class="info-box">
+            <i class="fas fa-book-open"></i> <strong>Interação 02 – Narrativa</strong><br>
+            Construção coletiva de uma narrativa sobre o currículo. Use o Menti para compartilhar suas ideias.
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-comment-dots"></i> Menti – Narrativa</h3>
+            <p>Participe da nuvem de palavras e contribua com sua visão.</p>
+            <a href="https://www.menti.com/alf4e9jiu34z" target="_blank" class="btn-link">Acessar Menti <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-handshake"></i> <strong>ZDP em ação:</strong> A narrativa coletiva fortalece a linguagem entre pares – trocamos experiências e ampliamos nossa zona de desenvolvimento proximal.
+        </div>
+    </div>
+
+    <!-- Interação 03 – π -->
+    <div id="tab-interacao3" class="tab-pane">
+        <div class="info-box">
+            <i class="fas fa-infinity"></i> <strong>Interação 03 – π</strong><br>
+            Explorando o número π com jogos e desafios. Experimente o site interativo!
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-gamepad"></i> Jogos e curiosidades sobre π</h3>
+            <p>Site com 3 jogos educativos sobre o número π, desenvolvido para esta formação.</p>
+            <a href="https://pne-de-cai.github.io/interacaoPI-urecai/" target="_blank" class="btn-link">Acessar Interação π <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-chart-line"></i> <strong>Ampliando o olhar:</strong> Assim como π é infinito, a aprendizagem é um processo contínuo. O Aluno Monitor ajuda a navegar por esse infinito com mais segurança.
+        </div>
+    </div>
+
+    <!-- Interação 04 – Turma heterogênea -->
+    <div id="tab-interacao4" class="tab-pane">
+        <div class="info-box">
+            <i class="fas fa-users"></i> <strong>Interação 04 – Turma heterogênea</strong><br>
+            Como organizar a aula para diferentes níveis de proficiência? Simulação com o professor Malba Tahan.
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-school"></i> Desafio da turma heterogênea</h3>
+            <p>Site interativo que simula a organização de uma turma com múltiplos níveis de aprendizagem.</p>
+            <a href="https://pne-de-cai.github.io/interacaoPII-urecai/" target="_blank" class="btn-link">Acessar Interação Turma Heterogênea <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-people-arrows"></i> <strong>Mediação na ZDP:</strong> O Aluno Monitor atua como parceiro mais experiente, ajudando os colegas a avançarem dentro de sua zona proximal.
+        </div>
+    </div>
+
+    <!-- Interação 05 – Caminhos -->
+    <div id="tab-interacao5" class="tab-pane">
+        <div class="info-box">
+            <i class="fas fa-route"></i> <strong>Interação 05 – Caminhos</strong><br>
+            Explorando diferentes percursos pedagógicos para atender os ritmos de aprendizagem.
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-random"></i> Caminhos possíveis</h3>
+            <p>Simulação sobre os dois cenários: manter na missão atual ou liberar a próxima.</p>
+            <a href="https://pne-de-cai.github.io/interacaoPIIv-urecai/" target="_blank" class="btn-link">Acessar Interação Caminhos <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-language"></i> <strong>Linguagem entre pares:</strong> O monitor utiliza gírias e exemplos do cotidiano para explicar conceitos, reduzindo a barreira da vergonha e do medo.
+        </div>
+    </div>
+
+    <!-- Interação 06 – ZDP -->
+    <div id="tab-interacao6" class="tab-pane">
+        <div class="info-box">
+            <i class="fas fa-brain"></i> <strong>Interação 06 – Zona de Desenvolvimento Proximal</strong><br>
+            Aprofundando o conceito de Vygotsky e o papel do Aluno Monitor.
+        </div>
+        <div class="card">
+            <h3><i class="fas fa-hand-holding-heart"></i> ZDP e recomposição</h3>
+            <p>Site com jogos e reflexões sobre a ZDP, a mediação e o trabalho em pares.</p>
+            <a href="https://pne-de-cai.github.io/interacaoPIII-urecai/" target="_blank" class="btn-link">Acessar Interação ZDP <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-chalkboard"></i> <strong>Aluno Monitor: agente de recomposição</strong> – sua atuação potencializa o trabalho do professor de Orientação de Estudos (OE).
+        </div>
+    </div>
+
+    <!-- Bora compartilhar -->
+    <div id="tab-compartilhar" class="tab-pane">
+        <h2>🤝 Bora compartilhar – Socialização das oficinas</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Compartilhar I</h3>
+                <p>Rodada de socialização – Oficina 1</p>
+                <a href="https://app.sli.do/event/ksfvUzFUV5WAPhEvckR6Vu/embed/polls/6598da86-9264-40f9-8af9-39901f9034df" target="_blank" class="btn-link">Acessar Poll <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="card">
+                <h3>Compartilhar II</h3>
+                <p>Socialização – Oficina 2</p>
+                <a href="https://app.sli.do/event/rC6t24SNcA26hYQkiax6tB" target="_blank" class="btn-link">Acessar Poll <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="card">
+                <h3>Compartilhar III</h3>
+                <p>Socialização – Oficina 3</p>
+                <a href="https://app.sli.do/event/rE2nJxVANXxKkgV3TPCj2w" target="_blank" class="btn-link">Acessar Poll <i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-users"></i> <strong>Socialização:</strong> momento de trocar experiências, compartilhar boas práticas e fortalecer a cultura colaborativa. Cada fala amplia nosso repertório coletivo.
+        </div>
+    </div>
+
+    <!-- Materiais -->
+    <div id="tab-materiais" class="tab-pane">
+        <h2>📚 Materiais de apoio e recursos</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>📄 Apresentação (PDF)</h3>
+                <a href="https://drive.google.com/file/d/1PRERv6rSEDgbadCn28ho5vekcc1vK0yo/view?usp=sharing" target="_blank" class="btn-link">Baixar PDF <i class="fas fa-download"></i></a>
+            </div>
+            <div class="card">
+                <h3>📽️ Slides da formação</h3>
+                <a href="https://docs.google.com/presentation/d/1XOitKoRSpqETXFA3ExARf3z3QIDPzynpdnyUSETqqsQ/edit?usp=sharing" target="_blank" class="btn-link">Acessar Slides <i class="fas fa-external-link-alt"></i></a>
+            </div>
+            <div class="card">
+                <h3>🎥 Vídeo no YouTube</h3>
+                <a href="https://youtu.be/dwmEc_cdhgA" target="_blank" class="btn-link">Assistir no YouTube <i class="fas fa-play"></i></a>
+            </div>
+            <div class="card">
+                <h3>🎙️ Podcast parte 01</h3>
+                <a href="https://drive.google.com/file/d/153AYUTYwfjcjs_cydjJBs6OXTO0-rQbS/view?usp=drive_link" class="btn-link" onclick="alert('Podcast em breve!')">Aguardem novidades</a>
+            </div>
+            <div class="card">
+                <h3>🎙️ Podcast parte 02</h3>
+                <a href="https://drive.google.com/file/d/1-Nb2xTkvWOk1cWxnOd4MJaOONvnu5gWy/view?usp=drive_link" class="btn-link" onclick="alert('Podcast em breve!')">Aguardem novidades</a>
+            </div>
+            <div class="card">
+                <h3>📋 Avaliação da formação</h3>
+                <a href="https://forms.gle/6k2GgUgM5pRva9VX8" target="_blank" class="btn-link">Responder formulário <i class="fas fa-edit"></i></a>
+            </div>
+            <div class="card">
+                <h3>📝 Lista de presença digital</h3>
+                <a href="https://forms.gle/kSbnyEMqcFU39eqK7" target="_blank" class="btn-link">Registrar presença <i class="fas fa-check-circle"></i></a>
+            </div>
+            <div class="card">
+                <h3>🔄 Cascateamento – Tutorial</h3>
+                <a href="https://docs.google.com/presentation/d/1519XHXHbZUUV6-l2w1h70FQ9oRLaPK7G/edit?usp=drivesdk&ouid=101532812359216929017&rtpof=true&sd=true" target="_blank" class="btn-link">Acessar Tutorial <i class="fas fa-chalkboard"></i></a>
+            </div>
+        </div>
+        <div class="info-box">
+            <i class="fas fa-sync-alt"></i> <strong>Cascateamento:</strong> leve os aprendizados para sua escola. O conhecimento circula e a aprendizagem floresce!
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <p>POR DENTRO DO CURRICULO – PEC DC - Matemática 2026 | URE-CAIEIRAS</p>
+        <p>Formação Presencial 2026 · Por dentro do Currículo</p>
+        <p>Todos os links e recursos estão disponíveis para consulta e uso pedagógico.</p>
+    </div>
+</footer>
+
+<script>
+    const tabs = document.querySelectorAll('.tab-button');
+    const panes = document.querySelectorAll('.tab-pane');
+
+    tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+            tabs.forEach(b => b.classList.remove('active'));
+            panes.forEach(p => p.classList.remove('active-pane'));
+
+            btn.classList.add('active');
+            const tabId = btn.getAttribute('data-tab');
+            document.getElementById(`tab-${tabId}`).classList.add('active-pane');
+            window.scrollTo({ top: 130, behavior: 'smooth' });
+        });
+    });
+</script>
+</body>
+</html>
