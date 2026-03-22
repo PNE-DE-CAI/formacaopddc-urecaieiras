@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formação Presencial Matemática 2026 · Caieiras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #212121;
+            line-height: 1.5;
+        }
+
+        :root {
+            --azul-escuro: #0a2f6c;
+            --azul-claro: #eef3fb;
+            --vermelho: #d32f2f;
+            --branco: #ffffff;
+            --preto: #212121;
+            --cinza-borda: #e0e4e9;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+        }
+
+        header {
+            background-color: var(--azul-escuro);
+            color: white;
+            padding: 0.6rem 0;
+            border-bottom: 4px solid var(--vermelho);
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .header-flex {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .logo img {
+            max-height: 58px;
+            width: auto;
+            display: block;
+            border-radius: 8px;
+            background: white;
+            padding: 4px;
+        }
+
+        .titulo-header h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .titulo-header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .nav-section {
+            background: white;
+            border-bottom: 1px solid var(--cinza-borda);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 86px;
+            z-index: 15;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .nav-section a {
+            color: var(--azul-escuro);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
+            padding: 0.3rem 0.6rem;
+            border-radius: 30px;
+        }
+
+        .nav-section a:hover {
+            background: var(--azul-claro);
+            color: var(--vermelho);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--azul-escuro);
+            border-left: 6px solid var(--vermelho);
+            padding-left: 1rem;
+            margin: 2rem 0 1.2rem 0;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--preto);
+            margin: 1.5rem 0 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: var(--branco);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.08);
+            border: 1px solid var(--cinza-borda);
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--azul-escuro);
+        }
+
+        .card-vermelho {
+            border-top: 5px solid var(--vermelho);
+        }
+
+        .card-azul {
+            border-top: 5px solid var(--azul-escuro);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--vermelho);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .badge-azul {
+            background-color: var(--azul-escuro);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        th {
+            background-color: var(--azul-escuro);
+            color: white;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            text-align: left;
+        }
+
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .lista-destaque {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .lista-destaque li {
+            padding: 0.6rem 0 0.6rem 1.8rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="%23d32f2f"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>') left center no-repeat;
+            background-size: 18px;
+        }
+
+        .callout {
+            background: #fff1f0;
+            border-left: 5px solid var(--vermelho);
+            padding: 1.2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .callout-azul {
+            background: var(--azul-claro);
+            border-left-color: var(--azul-escuro);
+        }
+
+        .link-doc {
+            color: var(--vermelho);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .link-doc:hover {
+            border-bottom-color: var(--vermelho);
+        }
+
+        footer {
+            background-color: var(--preto);
+            color: #ccc;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted var(--vermelho);
+        }
+
+        @media (max-width: 700px) {
+            .container { padding: 1rem; }
+            .header-flex { flex-direction: column; align-items: start; }
+            .nav-section { top: 118px; gap: 0.8rem; }
+            h2 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <img src="https://i.ibb.co/0p01LzxB/logo3de.jpg" alt="Logo SEDUC">
+        </div>
+        <div class="titulo-header">
+            <h1>Formação Presencial 2026</h1>
+            <p>Diretoria de Ensino Caieiras · Jornada do Professor de Matemática</p>
+        </div>
+    </div>
+</header>
+
+<nav class="nav-section">
+    <a href="#visao-geral">Visão Geral</a>
+    <a href="#orientacao-estudos">Orientação de Estudos</a>
+    <a href="#diagnosticar">Parte I: Diagnosticar</a>
+    <a href="#planejar">Parte II: Planejar</a>
+    <a href="#avaliar">Parte III: Avaliar</a>
+    <a href="#apoio">Apoio Presencial</a>
+    <a href="#cascateamento">Cascateamento</a>
+    <a href="index2.html">Recursos</a>
+</nav>
+
+<main class="container">
+    <!-- VISÃO GERAL -->
+    <section id="visao-geral">
+        <h2>📅 Visão Geral da Formação</h2>
+        <div class="card-grid">
+            <div class="card card-azul">
+                <i class="fas fa-calendar-alt" style="font-size: 2rem; color: var(--azul-escuro);"></i>
+                <h3>Datas e Objetivos</h3>
+                <p><strong>12 e 13 de março de 2026</strong> – Formação presencial com foco no desenvolvimento curricular, análise de evidências e planejamento estratégico.</p>
+                <p><strong>Propósito:</strong> Fortalecer a prática docente por meio da jornada “Por dentro do Currículo”, com oficinas práticas e troca de experiências.</p>
+            </div>
+            <div class="card card-azul">
+                <i class="fas fa-chalkboard-user" style="font-size: 2rem; color: var(--azul-escuro);"></i>
+                <h3>Agenda do 1º Dia</h3>
+                <ul class="lista-destaque">
+                    <li>8h – Acolhimento gamificado</li>
+                    <li>8h10 – Interação / A Jornada do Professor</li>
+                    <li>9h30 – Oficinas (Orientação de Estudos Matemática + Jornada Parte I)</li>
+                    <li>13h – 1ª Rodada de Oficinas</li>
+                    <li>15h – 2ª Rodada de Oficinas</li>
+                </ul>
+            </div>
+            <div class="card card-azul">
+                <i class="fas fa-clock" style="font-size: 2rem; color: var(--azul-escuro);"></i>
+                <h3>Agenda do 2º Dia</h3>
+                <ul class="lista-destaque">
+                    <li>8h – Credenciamento</li>
+                    <li>8h15 – 3ª Rodada de Oficinas</li>
+                    <li>10h30 – 4ª Rodada de Oficinas</li>
+                    <li>14h – Sistematização e Próximos Passos</li>
+                </ul>
+            </div>
+        </div>
+        <div class="callout">
+            <strong>📌 Combinados da Formação:</strong> Evite uso de celular, seja pontual, respeite as comandas, participe da pesquisa de opinião. O foco é a aprendizagem que reverbera nas escolas.
+        </div>
+    </section>
+
+    <!-- OFICINA ORIENTAÇÃO DE ESTUDOS MATEMÁTICA -->
+    <section id="orientacao-estudos">
+        <h2>📘 Oficina: Orientação de Estudos – Matemática</h2>
+        <p><strong>Objetivo:</strong> Planejar aulas de OE considerando avaliação diagnóstica, formativa e evidências cotidianas para atender estudantes de todos os níveis de aprendizagem.</p>
+        
+        <h3>🧩 Desafio da heterogeneidade</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>🏫 Situação‑problema (9º ano)</h4>
+                <p>Professor Malba Tahan tem uma turma com níveis <strong>abaixo do básico, básico e proficiente</strong>. Como organizar a Missão 1 do Livro 2?</p>
+            </div>
+            <div class="card">
+                <h4>📌 Estratégias sugeridas</h4>
+                <ul class="lista-destaque">
+                    <li>Mediação guiada para estudantes com maior dificuldade.</li>
+                    <li>Duplas produtivas e agrupamentos por nível.</li>
+                    <li>Estações de aprendizagem para ritmos diferentes.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>📋 Rubrica de organização (Atividade 1)</h3>
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Nível</th><th>Conteúdo</th><th>Metodologia</th><th>Estratégia</th><th>Organização</th></tr></thead>
+                <tbody>
+                    <tr><td>Abaixo do básico</td><td>Números decimais</td><td>Prática orientada</td><td>Mediação guiada</td><td>Individual</td></tr>
+                    <tr><td>Básico</td><td>Números decimais</td><td>Discussão entre pares</td><td>Dupla produtiva</td><td>Dupla</td></tr>
+                    <tr><td>Proficiente</td><td>Números decimais</td><td>Discussão em grupo</td><td>Agrupamento produtivo (análise de diferentes vieses)</td><td>Grupo</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3>⚡ Cenário 2: avanço em ritmo diferente</h3>
+        <div class="card-grid">
+            <div class="card card-vermelho">
+                <h4>Cenário 1: manter a cronologia</h4>
+                <ul class="lista-destaque">
+                    <li>Projetos de investigação (pesquisar história do conteúdo)</li>
+                    <li>Monitoria / tutoria entre pares</li>
+                    <li>Estação desafio com problemas complexos</li>
+                    <li>Criação de conteúdo (mapas mentais, vídeos)</li>
+                </ul>
+            </div>
+            <div class="card card-vermelho">
+                <h4>Cenário 2: liberar próxima missão</h4>
+                <ul class="lista-destaque">
+                    <li>Trilhas de aprendizagem com murais de progresso</li>
+                    <li>Rotação por estações (missão atual / avançada)</li>
+                    <li>Checkpoints síncronos (rodas de conversa)</li>
+                    <li>Gamificação colaborativa (metas coletivas)</li>
+                </ul>
+            </div>
+        </div>
+        <p class="link-doc">🔗 <a href="#" class="link-doc">Tarefa SP – Orientação de Estudos</a> (códigos L1, L2; em breve disparo por grupos)</p>
+        <div class="callout-azul callout">
+            <strong>Referências para aprofundamento:</strong> <br>
+            • Nova Escola – Avaliação e trabalho em turmas com diferentes níveis <br>
+            • Instituto Saber – Alfabetização em turmas multisseriadas <br>
+            • Vygotsky, Tomlinson, Weisz (obras citadas no documento)
+        </div>
+    </section>
+
+    <!-- JORNADA DO PROFESSOR – PARTE I: DIAGNOSTICAR -->
+    <section id="diagnosticar">
+        <h2>🔍 Parte I: Diagnosticar para planejar</h2>
+        <p><strong>Objetivo:</strong> Analisar indicadores de aprendizagem (relatórios de plataformas) para subsidiar o planejamento estratégico do bloco temático antes de seu início.</p>
+        
+        <h3>📊 Análise de relatórios</h3>
+        <div class="card-grid">
+            <div class="card">
+                <i class="fas fa-chart-line"></i>
+                <h4>Matific</h4>
+                <p>Acesse a plataforma, visualize os relatórios por BNCC, identifique habilidades fragilizadas. Exemplo: <strong>EF06MA02 – sistema de numeração decimal</strong>.</p>
+                <p><em>Login de teste:</em> patricia_lima@vanzolini.org.br / senha m@tematica2026!</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-chart-simple"></i>
+                <h4>Khan Academy</h4>
+                <p>Utilize o modo “Professor”, filtre por visão geral da atividade, localize descritores com baixo desempenho.</p>
+                <p><em>Login de teste:</em> professordakhan+grupo1@gmail.com / senha tadominado@26</p>
+            </div>
+        </div>
+
+        <h3>📘 Do diagnóstico ao escopo</h3>
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Relatório/Habilidade</th><th>Guia do Currículo Priorizado (AE)</th><th>Escopo‑Sequência (aulas)</th><th>Estratégia de planejamento</th></tr></thead>
+                <tbody>
+                    <tr><td>EF06MA02 (fragilidade)</td><td>AE1 – Compor/decompor números naturais<br>AE2 – Comparar/ordenar</td><td>Aulas 2, 4, 6, 8</td><td>Ampliar aulas 4 e 8 (diagnóstica prática)<br>Condensar aula 2<br>Adaptar aula 6 com caderno de questões</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout">
+            <strong>🎯 Planejamento estratégico:</strong> use a legenda de cores – <span style="background:#fffacd;">Amarelo</span> (ampliadas), <span style="background:#e0f7e8;">Verde</span> (condensadas), <span style="background:#ffe0cc;">Laranja</span> (adaptadas). O foco é alinhar as aulas às reais necessidades da turma.
+        </div>
+        <p class="link-doc">📁 <a href="#" class="link-doc">Guia do Currículo Priorizado 2026 (Anos Finais e EM)</a> – consulte o sumário para localizar as Aprendizagens Essenciais.</p>
+    </section>
+
+    <!-- JORNADA DO PROFESSOR – PARTE II: PLANEJAR PARA ENSINAR -->
+    <section id="planejar">
+        <h2>✍️ Parte II: Planejar para ensinar – Adaptação estratégica</h2>
+        <p><strong>Objetivo:</strong> Transformar o diagnóstico em planejamento real, adaptando o bloco temático com os recursos da SEDUC (Material Digital, caderno de questões, plataformas).</p>
+        
+        <div class="card-grid">
+            <div class="card card-azul">
+                <h4>Ferramentas disponíveis</h4>
+                <ul class="lista-destaque">
+                    <li>Material Digital (livro do estudante e professor)</li>
+                    <li>Caderno de questões complementar</li>
+                    <li>Plataformas (Matific, Khan, Tarefa SP)</li>
+                </ul>
+            </div>
+            <div class="card card-azul">
+                <h4>Visão macro do bloco</h4>
+                <p>Exemplo: bloco com 10 aulas (AF) ou 8 aulas (EM). Identificar quais aulas precisam de maior tempo, quais podem ser condensadas e quais serão adaptadas com diferentes recursos.</p>
+                <p><strong>Distribuição final:</strong> 11 aulas (1 excedente) – reorganização intencional.</p>
+            </div>
+        </div>
+
+        <h3>📌 Exemplo de adaptação (8º ano – Números decimais)</h3>
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Aula</th><th>Ferramenta</th><th>Alteração</th><th>Distribuição (quando aplicar)</th></tr></thead>
+                <tbody>
+                    <tr><td>Aula 2</td><td>Livro do Estudante</td><td>Foco na teoria e consolidação do raciocínio</td><td>Após as aulas práticas 4 e 8</td></tr>
+                    <tr><td>Aula 6</td><td>Livro + Plataformas (Matific)</td><td>Uso de ferramentas tecnológicas e recursos práticos</td><td>Após atividade 5 (Matific)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout-azul callout">
+            <strong>💡 Reflexão:</strong> planejar no nível do bloco significa construir um percurso coerente. O professor não adapta para “melhorar o material”, mas para garantir aprendizagem.
+        </div>
+    </section>
+
+    <!-- JORNADA DO PROFESSOR – PARTE III: AVALIAR PARA REPLANEJAR -->
+    <section id="avaliar">
+        <h2>📝 Parte III: Avaliar para replanejar</h2>
+        <p><strong>Objetivo:</strong> Utilizar a Matriz da Prova Paulista para construir uma avaliação de verificação coerente com o percurso formativo realizado.</p>
+
+        <div class="card-grid">
+            <div class="card">
+                <h4>🔗 Matriz da Prova Paulista</h4>
+                <p>Organiza descritores por grupos cognitivos (G1, G2, G3). As Aprendizagens Essenciais (AEs) orientam o que deve ser avaliado, garantindo alinhamento com currículo e material didático.</p>
+                <a href="#" class="link-doc">Acessar matriz completa</a>
+            </div>
+            <div class="card">
+                <h4>🎯 Como montar a avaliação</h4>
+                <ul class="lista-destaque">
+                    <li>Selecione habilidades trabalhadas no bloco.</li>
+                    <li>Busque itens na matriz (ou caderno de questões) que correspondam aos descritores.</li>
+                    <li>Organize com progressão de complexidade (conceitual → aplicação → situação-problema).</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>📌 Exemplo prático</h3>
+        <div class="table-responsive">
+            <table>
+                <thead><tr><th>Componente</th><th>Questão (origem)</th><th>Descritor</th><th>Nível de complexidade</th></tr></thead>
+                <tbody>
+                    <tr><td>8º ano</td><td>Aula 15 (azul)</td><td>EF08MA12 – Resolver problemas com sistemas lineares</td><td>G2 (aplicação)</td></tr>
+                    <tr><td>1ª série EM</td><td>Aula 12 (vermelha)</td><td>EM13MAT101 – Interpretar taxas e índices</td><td>G3 (superação)</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="callout">
+            <strong>🔄 Ciclo completo:</strong> Diagnosticar → Planejar → Adaptar → Avaliar → Replanejar. A avaliação não encerra o processo; ela ilumina os próximos passos.
+        </div>
+    </section>
+
+    <!-- APOIO PRESENCIAL EM SALA DE AULA -->
+    <section id="apoio">
+        <h2>👥 Apoio Presencial em Sala de Aula</h2>
+        <p>Estratégia de formação em serviço baseada em evidências. O foco é identificar uma <strong>aula de qualidade</strong> – aquela que gera aprendizagem.</p>
+
+        <h3>📋 Rubrica de Qualidade da Aula</h3>
+        <div class="card-grid">
+            <div class="card">
+                <h4>Planejamento e domínio do conteúdo</h4>
+                <p>O professor sabe aonde quer chegar? Demonstra domínio conceitual?</p>
+            </div>
+            <div class="card">
+                <h4>Estratégias de aprendizagem</h4>
+                <p>O que o professor faz para favorecer a aprendizagem? Verifica a compreensão com perguntas abertas?</p>
+            </div>
+            <div class="card">
+                <h4>Gestão da sala de aula</h4>
+                <p>Engaja os estudantes, lida com dispersão de forma respeitosa.</p>
+            </div>
+        </div>
+
+        <h3>🧪 Simulação de aula observada</h3>
+        <div class="callout">
+            <p><strong>Cenário:</strong> Professor inicia aula perguntando o que foi visto na última aula sobre frações, projeta slides rapidamente, não contextualiza, ignora dúvidas e encerra sem atividade prática.</p>
+            <p><strong>Evidências:</strong> Retomada superficial, não explicita objetivo, não verifica compreensão, não adapta explicação diante da dúvida do estudante.</p>
+            <p><strong>Feedback acionável:</strong> Iniciar com objetivo claro, retomar conteúdo de forma estruturada, utilizar exemplos variados, verificar entendimento com perguntas diagnósticas e encerrar com sistematização.</p>
+        </div>
+
+        <h3>📌 Registro de evidências</h3>
+        <p>Para um apoio efetivo, observe momentos específicos, descreva o que estudantes e professor fazem, e seja objetivo. O feedback deve basear-se em fatos observáveis.</p>
+        <p class="link-doc">🔗 <a href="#" class="link-doc">Documento Orientador – Apoio Presencial em Sala de Aula</a></p>
+    </section>
+
+    <!-- CASCATEAMENTO E PRÓXIMOS PASSOS -->
+    <section id="cascateamento">
+        <h2>🔄 Cascateamento das Formações Presenciais</h2>
+        <p>O conhecimento construído nas formações deve circular por toda a rede. As oficinas foram desenhadas para serem replicadas nas Unidades Escolares, fortalecendo o trabalho dos PECs, CECs e coordenadores.</p>
+        
+        <div class="card-grid">
+            <div class="card card-azul">
+                <h4>O que contabiliza</h4>
+                <ul class="lista-destaque">
+                    <li>Formados em ações N1 + ações criadas pela URE</li>
+                    <li>Formados em N2 + N3</li>
+                    <li>Formações por componente curricular</li>
+                </ul>
+            </div>
+            <div class="card card-azul">
+                <h4>O que não contabiliza</h4>
+                <ul class="lista-destaque">
+                    <li>Quantidade de formações (qualidade)</li>
+                    <li>Formações não curriculares</li>
+                    <li>Formações que abrangem mais de uma área</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>📌 Novidade: Cad Formação</h3>
+        <p>O novo sistema oferece mais autonomia para as UREs (autorização via DOE), fluxo de aprovação simplificado (PEC → CEC → DR) e interface mais intuitiva. O número do CAD aparece ao final e no certificado.</p>
+        <p class="link-doc">🔗 <a href="#" class="link-doc">Tutorial do CAD Formação</a></p>
+
+        <div class="callout-azul callout">
+            <strong>Próximos passos:</strong> Acompanhe as formações continuadas, utilize os materiais do repositório e fortaleça a cultura colaborativa. A pesquisa de opinião é fundamental para o aprimoramento.
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>POR DENTRO DO CURRICULO – PEC DC - Matemática 2026 | URE-CAIEIRAS</p>
+            <p>Formação Presencial 2026 – Matemática | Documento orientador elaborado com base nos materiais da SEDUC-SP</p>
+            <p>Central de Atendimento: 0800 77 000 12 | <a href="#">atendimento.educacao.sp.gov.br</a></p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">identidade visual: azul, vermelho, preto, branco · logo oficial</p>
+        </div>
+    </footer>
+</main>
+</body>
+</html>
